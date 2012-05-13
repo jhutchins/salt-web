@@ -11,6 +11,10 @@ requires = [
     'pyramid_debugtoolbar',
     'waitress',
     ]
+test_requires = requires + [
+    'nose',
+    'coverage',
+    ]
 
 setup(name='salt-web',
       version='0.0',
@@ -30,7 +34,7 @@ setup(name='salt-web',
       include_package_data=True,
       zip_safe=False,
       install_requires=requires,
-      tests_require=requires,
+      tests_require=test_requires,
       test_suite="saltweb",
       entry_points = """\
       [paste.app_factory]
