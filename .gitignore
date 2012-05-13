@@ -1,6 +1,2 @@
 *.py?
 *.sw?
-bin
-include
-lib
-local
