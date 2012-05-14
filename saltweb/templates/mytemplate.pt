@@ -6,7 +6,24 @@
   <link rel="shortcut icon" href="${request.static_url('saltweb:static/favicon.ico')}" />
   <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
   <script src="http://code.angularjs.org/angular-1.0.0rc8.min.js"></script>
+  <script src="${request.static_url('saltweb:static/app.js')}"></script>
 </head>
 <body ng-app>
+  <div class='span12 offset4'>
+    <table ng-controller="MinionCtrl" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Minion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="minion in minions">
+          <td class='span2'><span class='label label-{{minion.label}}'>{{minion.status}}</span></td>
+          <td>{{minion.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
